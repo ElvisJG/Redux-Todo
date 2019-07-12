@@ -1,33 +1,68 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
   text-align: center;
+  max-width: 700px;
+  margin: auto;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.total {
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.balances {
+  list-style-type: none;
+}
+
+.balances li {
+  display: inline-block;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.balances li:not(:last-child) {
+  margin-right: 40px;
+}
+
+section {
+  padding: 50px;
+}
+
+section:not(:last-child) {
+  border-bottom: 1px solid lightgray;
+}
+
+form {
+  margin: 20px;
+}
+
+input,
+select {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid lightgray;
+  background: transparent;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background: blue;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: none;
+  cursor: pointer;
 }
