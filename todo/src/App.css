@@ -10,12 +10,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgba(17, 17, 17, 0.74);
 }
 
 .soFancy {
-  background-image: linear-gradient(rgba(168, 2, 2, 0.849), rgb(34, 34, 34));
-  box-shadow: 0 0 8px 8px rgba(192, 0, 0, 0.322),
-    0 6px 20px 0 rgba(122, 1, 1, 0.294);
+  background-image: linear-gradient(rgba(168, 2, 2, 0.575), rgb(34, 34, 34));
+  box-shadow: 0 0 8px 8px rgba(192, 0, 0, 0.157),
+    0 6px 20px 0 rgba(122, 1, 1, 0.13);
   padding: 1rem;
   color: rgb(255, 255, 255);
   font-weight: bold;
@@ -43,6 +44,14 @@ section h5 {
   text-decoration: underline;
   font-size: 1.5rem;
   margin: 1rem 0 0.2rem;
+  color: rgba(211, 211, 211, 0.527);
+}
+
+section h5 em {
+  margin-left: 1rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
 }
 
 section li {
@@ -62,7 +71,7 @@ select {
   margin-bottom: 10px;
   font-size: 16px;
   border: 1px solid lightgray;
-  background: transparent;
+  background: #444;
 }
 
 button {
@@ -71,7 +80,7 @@ button {
   font-weight: bold;
   background: rgba(168, 2, 2);
   color: white;
-  border: none;
+  border: 1px solid lightgray;
   cursor: pointer;
 }
 

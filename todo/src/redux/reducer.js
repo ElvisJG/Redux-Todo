@@ -1,4 +1,4 @@
-import { MAKE_TODO, DELETE_TODO, TOGGLE_TODO } from './actions';
+import { MAKE_TODO, TOGGLE_TODO } from './actions';
 import uuid from 'uuid';
 
 // all state values need an initial value

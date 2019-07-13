@@ -42,13 +42,15 @@ class TodoForm extends React.Component {
     return (
       <section>
         <h2>Todo List</h2>
-        <h5>CURRENT TODOS TOTAL: {this.props.todo.length}</h5>
+        <h5>
+          CURRENT TODOS TOTAL: <em>{this.props.todo.length}</em>
+        </h5>
         {this.props.todo.map(i => {
           return (
             <li
               key={i.id}
               onClick={() => {
-                toggleTodo(i.id);
+                toggleTodo();
               }}
             >
               {i.value}
