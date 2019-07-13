@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { makeTodo } from '../redux/actions';
+import { makeTodo, toggleTodo } from '../redux/actions';
 import uuid from 'uuid';
 
 import '../App.css';
@@ -44,7 +44,16 @@ class TodoForm extends React.Component {
         <h2>Todo List</h2>
         <h5>CURRENT TODOS TOTAL: {this.props.todo.length}</h5>
         {this.props.todo.map(i => {
-          return <li key={i.id}>{i.value}</li>;
+          return (
+            <li
+              key={i.id}
+              onClick={() => {
+                toggleTodo(i.id);
+              }}
+            >
+              {i.value}
+            </li>
+          );
         })}
 
         <form onSubmit={this.createTodo}>
@@ -77,5 +86,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { makeTodo }
+  { makeTodo, toggleTodo }
 )(TodoForm);
