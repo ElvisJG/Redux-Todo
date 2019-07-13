@@ -49,8 +49,10 @@ class TodoForm extends React.Component {
           return (
             <li
               key={i.id}
-              onClick={() => {
-                toggleTodo();
+              onClick={() => toggleTodo(i.id)}
+              style={{
+                textDecoration: i.completed ? 'line-through' : 'none',
+                color: i.completed ? '#777777' : '#a80202'
               }}
             >
               {i.value}
@@ -70,6 +72,13 @@ class TodoForm extends React.Component {
 
           <button type='submit'>Submit Todo</button>
         </form>
+        <div className='delete-todos'>
+          <button class='big-red'>Delete Todos</button>
+          <h1 className='warning'>
+            <em>WARNING!</em> <br />
+            ⚠THIS BUTTON DELETES ALL TODOS MARKED AS COMPLETE! ⚠
+          </h1>
+        </div>
       </section>
     );
   }
