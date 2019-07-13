@@ -42,12 +42,10 @@ class TodoForm extends React.Component {
     return (
       <section>
         <h2>Todo List</h2>
-        <h6>
-          CURRENT TODOS TOTAL: {this.props.todo.length}
-          {this.props.todo.map(i => {
-            return <li key={i.id}>{i.value}</li>;
-          })}
-        </h6>
+        <h5>CURRENT TODOS TOTAL: {this.props.todo.length}</h5>
+        {this.props.todo.map(i => {
+          return <li key={i.id}>{i.value}</li>;
+        })}
 
         <form onSubmit={this.createTodo}>
           <input

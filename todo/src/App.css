@@ -32,13 +32,23 @@ section {
   padding: 50px;
 }
 
-section:not(:last-child) {
-  border-bottom: 1px solid lightgray;
-}
-
 section h2 {
   color: rgba(168, 2, 2);
   font-weight: bold;
+  font-size: 4rem;
+  margin: 0 -2rem 1rem;
+}
+
+section h5 {
+  text-decoration: underline;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.2rem;
+}
+
+section li {
+  color: rgba(168, 2, 2);
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 form {
