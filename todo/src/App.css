@@ -108,4 +108,13 @@ button {
   height: 150px;
   width: 150px;
   border: 5px solid white;
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.411),
+    0 6px 20px 0 rgba(0, 0, 0, 0.164);
+  transition: 0.3s;
+}
+
+.big-red:hover {
+  box-shadow: none;
+  transition: 0.35s;
+  background-color: #8f0101;
 }
