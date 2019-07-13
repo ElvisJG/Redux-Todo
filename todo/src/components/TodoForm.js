@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { makeTodo, toggleTodo } from '../redux/actions';
+import { makeTodo, toggleTodo, deleteTodo } from '../redux/actions';
 import uuid from 'uuid';
 
 import '../App.css';
@@ -75,8 +75,8 @@ class TodoForm extends React.Component {
         <div className='delete-todos'>
           <button class='big-red'>Delete Todos</button>
           <h1 className='warning'>
-            <em>WARNING!</em> <br />
-            ⚠THIS BUTTON DELETES ALL TODOS MARKED AS COMPLETE! ⚠
+            <em>WARNING!</em> <br />⚠ THIS BUTTON DELETES ALL TODOS MARKED AS
+            COMPLETE! ⚠
           </h1>
         </div>
       </section>
@@ -91,11 +91,7 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps = {
-//   makeTodo: makeTodo
-// };
-
 export default connect(
   mapStateToProps,
-  { makeTodo, toggleTodo }
+  { makeTodo, toggleTodo, deleteTodo }
 )(TodoForm);

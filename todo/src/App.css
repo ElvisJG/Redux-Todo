@@ -62,6 +62,7 @@ section li {
 
 form {
   margin: 20px;
+  color: white;
 }
 
 input,
@@ -72,6 +73,7 @@ select {
   font-size: 16px;
   border: 1px solid lightgray;
   background: #444;
+  color: white;
 }
 
 button {

@@ -1,4 +1,4 @@
-import { MAKE_TODO, TOGGLE_TODO } from './actions';
+import { MAKE_TODO, TOGGLE_TODO, DELETE_TODO } from './actions';
 import uuid from 'uuid';
 
 // all state values need an initial value
@@ -27,6 +27,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         completed: !state.completed
+      };
+    }
+    case DELETE_TODO: {
+      return {
+        state
       };
     }
     default:
