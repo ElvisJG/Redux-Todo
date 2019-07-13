@@ -1,40 +1,38 @@
-import { MAKE_DEPOSIT, MAKE_WITHDRAWAL } from './actions';
+import { MAKE_TODO, DELETE_TODO } from './actions';
+import uuid from 'uuid';
 
 // all state values need an initial value
 const initialState = {
-  todos: []
+  todos: [
+    {
+      value: 'Walk Dog',
+      completed: false,
+      id: uuid()
+    }
+  ]
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case MAKE_DEPOSIT: {
-      const { value, completed } = action.payload;
-      const newActivity = state.accountActivity.concat([
-        // adding more data to the description before it goes into store
-        `${new Date()}, ${value}, ${completed}`
-      ]);
-
+    case MAKE_TODO: {
       return {
         ...state,
-        [account]: newAmount,
-        accountActivity: newActivity
+        todos: [...state.todos, action.payload]
       };
     }
-    // NOTE: SAME AS MAKE_DEPOSIT, TWEAKED SO IT SUBTRACTS INSTEAD OF ADDS
-    case MAKE_WITHDRAWAL: {
-      const { amount, account, description } = action.payload;
-      const newAmount = state[account] - parseInt(amount);
-      const newActivity = state.accountActivity.concat([
-        // adding more data to the description before it goes into store
-        `${new Date()}, ${description}, -${amount}`
-      ]);
+    // case DELETE_TODO: {
+    //   const { amount, account, description } = action.payload;
+    //   const newAmount = state[account] - parseInt(amount);
+    //   const newActivity = state.accountActivity.concat([
+    //     `${new Date()}, ${description}, -${amount}`
+    //   ]);
 
-      return {
-        ...state,
-        [account]: newAmount,
-        accountActivity: newActivity
-      };
-    }
+    //   return {
+    //     ...state,
+    //     [account]: newAmount,
+    //     accountActivity: newActivity
+    //   };
+    // }
     default:
       return state;
   }
