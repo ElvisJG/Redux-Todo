@@ -14,26 +14,22 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case MAKE_TODO: {
+    case MAKE_TODO:
       return {
         ...state,
         todos: [...state.todos, action.payload]
       };
-    }
-    case TOGGLE_TODO: {
-      if (state.id !== action.id) {
-        return state;
-      }
+    case TOGGLE_TODO:
       return {
         ...state,
-        completed: !state.completed
+        todos: state.todos.map(i =>
+          i.id === action.payload ? { ...i, completed: !i.completed } : i
+        )
       };
-    }
-    case DELETE_TODO: {
+    case DELETE_TODO:
       return {
         state
       };
-    }
     default:
       return state;
   }

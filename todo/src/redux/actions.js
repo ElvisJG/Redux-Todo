@@ -12,10 +12,10 @@ export function makeTodo(newTodo) {
   };
 }
 
-export function toggleTodo(toggleTodo) {
+export function toggleTodo(id) {
   return {
     type: TOGGLE_TODO,
-    payload: toggleTodo
+    payload: id
   };
 }
 

@@ -38,6 +38,7 @@ class TodoForm extends React.Component {
 
   render() {
     const { value } = this.state;
+    const { toggleTodo } = this.props;
 
     return (
       <section>
@@ -46,6 +47,7 @@ class TodoForm extends React.Component {
           CURRENT TODOS TOTAL: <em>{this.props.todo.length}</em>
         </h5>
         {this.props.todo.map(i => {
+          console.log(i.completed);
           return (
             <li
               key={i.id}
@@ -73,7 +75,7 @@ class TodoForm extends React.Component {
           <button type='submit'>Submit Todo</button>
         </form>
         <div className='delete-todos'>
-          <button class='big-red'>Delete Todos</button>
+          <button className='big-red'>Delete Todos</button>
           <h1 className='warning'>
             <em>WARNING!</em> <br />⚠ THIS BUTTON DELETES ALL TODOS MARKED AS
             COMPLETE! ⚠
